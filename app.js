@@ -1,6 +1,6 @@
 $ = jQuery;
 var resistencia = $("#resistencia")[0].innerText
-var maxHealth = 10*10,
+var maxHealth = 10*resistencia,
   curHealth = maxHealth;
 $('.total').html(maxHealth + "/" + maxHealth);
 $(".health-bar-text").html("100%");
