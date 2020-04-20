@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap css cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  <!-- bootstrap js cdn -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Kohan</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Kohan, a escórnia dos felinos </h1>
+      <nav>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="ficha-tab" data-toggle="tab" href="#ficha" role="tab" aria-controls="ficha" aria-selected="true">Ficha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="itens-tab" data-toggle="tab" href="#itens" role="tab" aria-controls="itens" aria-selected="false">Itens</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="backstory-tab" data-toggle="tab" href="#backstory" role="tab" aria-controls="backstory" aria-selected="false">Backstory</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="ficha" role="tabpanel" aria-labelledby="home-tab">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-5">
+                <div class="card profile-card">
+                  <img src="./img/kohan2.png" class="card-img-top profile-pic" alt="Kohan, a escórnia dos felinos">
+                  <div class="card-body">
+                    <ul class="profile-ul">
+                      <li><strong>Nome:</strong> Kohan</li>
+                      <li><strong>Raça: </strong>Felino</li>
+                      <li><strong>Gênero: </strong>Homen</li>
+                      <li><strong>Idade: </strong>25</li>
+                      <li><strong>Peso: </strong>71 kg</li>
+                      <li><strong>Altura: </strong>1,56 m</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-10" id="atributos">
+
+                <div class="card hp-card">
+                  <h2 class="card-header text-center">HP</h2>
+
+                  <div class="d-flex justify-content-between hp-flex">
+
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-danger" onclick="damage(10)">-10</button>
+                      <button type="button" class="btn btn-danger" onclick="damage(5)">-5</button>
+                      <button type="button" class="btn btn-danger" onclick="damage(1)">-1</button>
+                    </div>
+                    
+                    <div class="total text-center"></div>
+
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-success" onclick="heal(1)">+1</button>
+                      <button type="button" class="btn btn-success" onclick="heal(5)">+5</button>
+                      <button type="button" class="btn btn-success" onclick="heal(10)">+10</button>
+                    </div>
+                    
+                  </div>
+                  
+                        <div class="health-box">
+                          <div class="health-bar-red"></div>
+                          <div class="health-bar-blue"></div>
+                          <div class="health-bar"></div>
+                          <div class="health-bar-text text-center"></div>
+                        </div>
+
+                </div>
+                <div class="card att-card">
+
+                  <h2 class="card-header text-center">Atributos</h2>
+                  <div class="att-list">
+                    
+                    <div class="row" id="atributos-header">
+                      <div class="col-3"></div>
+                      <div class="col-2 text-center"><strong>Valor</strong></div>
+					  <div class="col-2 text-center"><strong>Raça</strong></div>
+					  <div class="col-1 text-center"><strong>Exo</strong></div>
+                      <div class="col-2 text-center"><strong>Mod 1</strong></div>
+                      <div class="col-2 text-center"><strong>Mod 2</strong></div>
+                    </div>
+                    <div class="att-items">
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Força</strong></div>
+                        <div class="col-2 text-center">9</div>
+						<div class="col-2 text-center">-3</div>
+						<div class="col-1 text-center">0</div>
+                        <div class="col-2 text-center">2</div>
+                        <div class="col-2 text-center">1</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Agilidade</strong></div>
+                        <div class="col-2 text-center">13</div>
+						<div class="col-2 text-center">+5</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">6</div>
+                        <div class="col-2 text-center">4</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Destreza</strong></div>
+                        <div class="col-2 text-center">9</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">3</div>
+                        <div class="col-2 text-center">2</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Carisma+</strong></div>
+                        <div class="col-2 text-center">6</div>
+						<div class="col-2 text-center">+3</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">3</div>
+                        <div class="col-2 text-center">2</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Carisma-</strong></div>
+                        <div class="col-2 text-center">5</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">1</div>
+                        <div class="col-2 text-center">1</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Lábia</strong></div>
+                        <div class="col-2 text-center">9</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">3</div>
+                        <div class="col-2 text-center">2</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Inteligência</strong></div>
+                        <div class="col-2 text-center">9</div>
+						<div class="col-2 text-center">0</div>
+						<div class="col-1 text-center">0</div>
+                        <div class="col-2 text-center">3</div>
+                        <div class="col-2 text-center">2</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Sorte</strong></div>
+                        <div class="col-2 text-center">6</div>
+						<div class="col-2 text-center">+0</div>
+						<div class="col-1 text-center">+0</div>
+                        <div class="col-2 text-center">2</div>
+                        <div class="col-2 text-center">1</div>
+                      </div> 
+                      
+                      <div class="row">
+                        <div class="col-3 atributo"><strong>Resistência</strong></div>
+                        <div class="col-2 text-center">16</div>
+						<div class="col-2 text-center">-6</div>
+						<div class="col-1 text-center">0</div>
+                        <div class="col-2 text-center">3</div>
+                        <div class="col-2 text-center">2</div>
+                      </div> 
+					  
+                    </div>
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="itens" role="tabpanel" aria-labelledby="itens-tab">
+          <div class="containter">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <h2 class="card-header">Exo e Raça</h2>
+                  <div class="card-body">
+                    <div class="card-text">
+                      <p>Felino</p>
+					  <p>Exoesqueleto de Cura</p>
+                      <p>Força -3</p>
+					  <p>Agilidade +5</p>
+					  <p>Destreza +5</p>
+					  <p>Carisma+ +3</p>
+					  <p>Habilidades de Raça: Visão Noturna; Garras retráteis</p>
+					  <p>Detalhes de Raça: Hidrofóbicos; com 5% de vida desvio crítico desce pra 15</p>
+					  <p>Habilidades do Exoesqueleto:</p>
+					  <p>- +5HP p/turno</p>
+					  <p>- Desmontar Exoesqueleto: Se tirar +18/d20, desmonta exo inimigo (1/p5turno)</p>
+					  <p>- Transferência de HP</p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <div class="card">
+                  <h2 class="card-header">Itens</h2>
+                  <div class="card-body">
+                    <ul>
+                      <li>Adaga Tunada (1d10 + agl/2)</li>
+                      <li>Prótese de apoio</li>
+					   <img src="./img/kohan1.png">
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+		  
+
+			<div class="row">
+				<div class="col-md-4">
+				 <div class="card">
+                  <h2 class="card-header">Informações</h2>
+                  <div class="card-body">
+                    <div class="card-text">
+                      <p>Carteira:</p>
+					  <p>Ganhos totais: 3k Soberanis</p>
+                      <p>Saldo atual: 1,5k Soberanis</p>
+					  <p>---------------------------</p>
+					  <p>Experiencia:</p>
+					  <p>Ganhos totais: 3000 xp</p>
+					  <p>Saldo atual: 0 xp</p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="col-md-8">
+                <div class="card">
+                  <h2 class="card-header">Habilidades Unicas</h2>
+                  <div class="card-body">
+					<p><b>Giro e Impulso 180 graus:</b></p>
+					<p>Uma esquiva perfeita OU +9AGI se tirar 15+/d20. 1/p5 Turno</p>
+					<p><b>Cura inversa:</b></p>
+					<p>Uma vez a cada 3 turnos, pode dar dano que recupera vira igual o dano total</p>
+					<p>Dano: 1d10+Int1+Ag2 / Requer contato físico<p/>
+					<p>Copia e adiciona o modificador de um atributo escolhido por 2 dois turnos (diminui para metade no segundo turno)</p>
+
+                  </div>
+                </div>
+              </div>
+			</div>
+		  </div>
+		</div>
+
+        <div class="tab-pane fade" id="backstory" role="tabpanel" aria-labelledby="backstory-tab">
+          <h2 id="backstory-title">Background</h2>
+          <div id="backstory-content">
+
+            <p>Filho de um artista (ator/cantor/compositor) de grande importância na alta classe da casta dos felinos. Seu pai foi assasinado quando tinha 6 anos por robôs/olhos do soberano ao ser denunciado por um colega de trabalho por participar em material artístico considerado herege a ordem do Soberano. Afilhado por este mesmo colega, foi escondido da verdade até completar 12 anos e ser enviado para ser aprendiz em um retiro de engenheiros para treinar suas habilidades manuais e técnicas para se tornar artesão de exoesqueletos e outras tecnologias similares. Ao descobrir a verdade, guardou rancor em segredo e prometeu para si mesmo se vingar da morte injusta de seu pai, tentando chegar ao topo da elite utilizando de conexões socias e sendo gentil com os próximos, mesmo que os odiasse.<br><br>
+Com isso, aproveitou seu aprendizado longe da capital e aperfeiçou suas habilidades felinas de agilidade e movimentação. Após 7 anos como aprendiz, houve uma mudança abrupta de chefia no local após a morte do engenheiro comandante. O novo comandante, Nyathatos, um felino de alta casta mas de hierarquia inferior à Kohan, que conhecia a história de seu pai e guardava rancor por ter menos poder político dentro da raça, o delegou como serviçal e o proibiu de sair do retiro. Em uma tentativa de suas tentativas de escapar, Kohan passa por uma sala de forja onde os caldeirões tinham sido propositalmente sabotados pelo comandante, na intenção de ganhar mais influência dentro do local sendo o herói de um acidente. Martelos de guerra escaldantes caíram sobre suas pernas e pés, estilhaçando os ossos do pé e do começo da perna. Foi então encontrado por colegas e levado em segredo para um curandeiro do retiro. Graças á tecnologia de reconstrução corporal e de apoio de exoesqueleto sendo desenvolvido no local, seu pé foi reconstruído mas sua ligação com a perna é mantida por um suporte tecnológico que o permite rotacionar suas patas até 180 graus. Ao terem o reportado como morto, Kohãn é mandado de volta após se curar de seus ferimentos, com a promessa de um lugar seguro para seu retorno após tirarem Nyathatos do poder e retomarem controle.<br><br>
+Após voltar para o centro da citadela, desenvolveu suas habilidades sociais e de combate até ser convidado para participar de uma divisão especial da ordem do Soberano, onde acredita ser possível ganhar renome e atingir o topo da casta dos felinos.
+</p>
+          </div>
+		  
+		  <h2 id="backstory-title">Log's Sessões - Historico Grea: </h2>
+		  <ul class="profile-ul">
+			<li>Sessão 1:</li>
+			<br>
+			<li>* Não participei *</li>
+			<br>
+			<li>Sessão 2:</li>
+			<br>
+			<li>* Quinta tarde:</li>
+			<li>- Treinei artes marciais (exp)</li>
+			<li>- [Report ao Sr. Draco] 3 mil Soberanis pelo Report da missão ref sessao 1 </li>
+			<li>* Quinta a noite:</li>
+			<li>- Meditação (exp)</li>
+			<li>- Parei a meditação na metade e fui para o bar, presentimento;</li>
+			<li>- Iludido pelos infernais na treta do bar;</li>
+			<li>- Volta de noite e medita antes de dormir;</li>
+			<li>* Sexta:</li>
+			<li>- Baile festa draco filha - discussão de estratégia;</li>
+			<li>- Treinar com peso nas pernas (tarde);</li>
+			<li>- Missao do baile [FAILED]: Objetivo proteger a familia do Sr. Draco (Filho mais velho morreu)</li>
+			<li>- Bonus: Conseguimos contato com o Mercado Negro ao parar inimigos no predio suspeito</li>
+			<br>
+			<li>Ganhos gerais da sessão 2: </li>
+			<li>* 700 exp base + 200exp interpretação (900 total)</li>
+			<li>* 3 mil Soberanis</li>
+			<li>* Adquiriu habilidade Frenesi draconiana Lv 1 (custo 800 exp)</li>
+			<li>* Adquiriu Luvas [2d10 + for/2] (custo 2k Soberanis)</li>
+			<br>
+		</ul>
+        </div>
+      </div>
+  
+  
+  </div>
+
+<style>
+body {
+  background-color: #6faccb;
+}
+div {
+  background-color: #acdffa;; 
+}
+</style>
+  
+
+  <script src="app.js"></script>
+</body>
+</html>
